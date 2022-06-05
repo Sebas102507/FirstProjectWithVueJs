@@ -16,7 +16,8 @@ new Vue({
                 { day: 'Sabado', value: 10000 },
                 { day: 'Domingo', value: 10200 },
             ],
-      showPrices:false      
+      showPrices:false,
+      color: 'f4f4f4'      
     }
   },
 
@@ -25,6 +26,7 @@ new Vue({
 
     toggleShowPrices(){
       this.showPrices= !this.showPrices
+      this.color= this.color.split('').reverse('').join('')
     }
 
   }
