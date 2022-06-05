@@ -27,7 +27,7 @@
       <span v-show="changePercent == 0">🆘</span>
     </h1>
 
-
+    
     <button v-on:click="toggleShowPrices">
       {{!showPrices?'Ver precios':'Ocultar precios'}}
     </button>
@@ -45,12 +45,16 @@
     </ul>
 
   
+    <input type="number" v-model="inputValue">
+    <span> Unidades: {{convertedValue}}</span>
 
   </div>
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="./app.js"></script>
-
-
+  
 </body>
 </html>
 
