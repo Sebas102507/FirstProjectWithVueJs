@@ -18,6 +18,7 @@
     <h1>
       {{name}}
       <span v-if="changePercent>0">💸</span>
+      <span v-if="changePercent>0">💸</span>
       <span v-else-if="changePercent<0">☠️</span>
       <span v-else>🆘</span>
 
@@ -38,7 +39,7 @@
     </ul>
 
     <ul>
-      <li v-for="(price, index) in pricesWithDays" :key="price.day">
+      <li v-for="(price, index) in pricesWithDays" :key="price.day" v-bind:class="{orange: price.value === currentPrice, red: price.value < currentPrice, green: price.value > currentPrice}">
         {{index}} : {{price["day"]}} : {{price["value"]}}
       </li>
     </ul>
