@@ -10,7 +10,10 @@
 <body>
 
   <div id="app">
-    <img :src="image" :alt="name" id="logoEth">
+    <img 
+    v-on:mouseover="toggleShowPrices" 
+    v-on:mouseout="toggleShowPrices" 
+    :src="image" :alt="name" id="logoEth">
 
     <h1>
       {{name}}
@@ -23,7 +26,12 @@
       <span v-show="changePercent == 0">🆘</span>
     </h1>
 
-    <ul>
+
+    <button v-on:click="toggleShowPrices">
+      {{!showPrices?'Ver precios':'Ocultar precios'}}
+    </button>
+
+    <ul v-show="showPrices == true">
       <li v-for="(price, index) in prices" :key="price">
         {{index}} : {{price}}
       </li>
@@ -35,6 +43,7 @@
       </li>
     </ul>
 
+  
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
